@@ -3,11 +3,11 @@ from math import sqrt, fabs
 
 def get_roots(a, b, c):
     discriminant = b ** 2 - 4 * a * c
+    if discriminant < 0:
+        return None, None
     root1 = (-b - sqrt(fabs(discriminant))) / (2 * a)
     root2 = (-b + sqrt(fabs(discriminant))) / (2 * a)
     if discriminant == 0:
         return root1, None
-    elif discriminant > 0:
-        return root1, root2
     else:
-        return None, None
+        return root1, root2
